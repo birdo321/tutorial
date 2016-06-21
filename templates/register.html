@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Register</h1>
+	<form action="" method="post" name="login">
+		{{ form.hidden_tag() }}
+		<p>
+			Please Enter your ID: <br>
+			{{ form.username(size=80) }}<br>
+			{% for error in form.username.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}<br>
+		</p>
+		<p>Please Enter your Password <br>
+		{{ form.password(size=80)}}<br>
+		</p>
+		<p>Please Enter your Password Again <br>
+		{{ form.password_again(size=80)}}<br>
+		</p>
+		<p>Please Enter your nickname <br>
+		{{ form.nickname(size=80)}}<br>
+		</p>
+		<p><input type="submit" value="Sign In"></p>
+	</form>
+{% endblock content %}

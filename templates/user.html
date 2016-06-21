@@ -1,0 +1,14 @@
+<!-- extends base layout -->
+
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>User: {{ user.nickname }}!</h1>
+	<hr>
+	{% for posts in post %}
+	<p>
+		{{ post.author.nickname }} says: <b>{{ post.body }}<br>
+	</p>
+	{% endfor %}
+{% endblock %}
+
